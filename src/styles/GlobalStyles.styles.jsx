@@ -6,6 +6,12 @@ const GlobalStyles = createGlobalStyle`
   
   @font-face {
     font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+  @font-face {
+    font-family: 'Paperlogy';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
@@ -75,8 +81,14 @@ const GlobalStyles = createGlobalStyle`
     color: var(--text-color)
   }
 
+  button {
+    border: none;
+    background: none;
+  }
+
   :root {
     --bg-color: #F8FAFC;
+    --box-color: #fff;
     --text-color: #222;
     --accent-color: #4579FF;
     --border-color: #BCCCDC;
