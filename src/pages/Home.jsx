@@ -4,11 +4,12 @@ import TopTitle from "../components/TopTitle";
 import DateArea from "../components/DateArea";
 import TodoInput from "../components/TodoInput";
 import TodoList from "../components/TodoList";
+import TodoCounts from "../components/TodoCounts";
 
 const Container = styled.div`
   width: 500px;
   margin: 0 auto;
-  margin-top: 100px;
+  padding: 100px 0;
 `;
 
 const Box = styled.div`
@@ -26,6 +27,7 @@ const Home = () => {
         <DateArea />
         <TodoInput />
         <TodoList />
+        <TodoCounts />
       </Box>
     </Container>
   );
