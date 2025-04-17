@@ -14,7 +14,7 @@ const DatesArea = styled.div`
   }
 `;
 
-const Date = styled.div`
+const Dates = styled.div`
   display: flex;
   gap: 10px;
   span {
@@ -35,16 +35,23 @@ const Date = styled.div`
   }
 `;
 const DateArea = () => {
+  const today = new Date();
+
+  const year = today.getFullYear();
+  const month = today.toLocaleString("en-US", { month: "long" });
+  const date = today.getDate();
+  const weekday = today.toLocaleString("en-US", { weekday: "long" });
+
   return (
     <DatesArea>
-      <Date>
-        <span className="date">15</span>
+      <Dates>
+        <span className="date">{date}</span>
         <div className="m-y">
-          <span className="month">APRIL</span>
-          <span className="year">2025</span>
+          <span className="month">{month.toUpperCase()}</span>
+          <span className="year">{year}</span>
         </div>
-      </Date>
-      <p className="day">TUESDAY</p>
+      </Dates>
+      <p className="day">{weekday.toUpperCase()}</p>
     </DatesArea>
   );
 };

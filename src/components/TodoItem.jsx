@@ -1,5 +1,6 @@
-import React from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { todoAction } from "../redux/todo/todoAction";
 
 const Todoitem = styled.div`
   padding: 14px 0;
@@ -61,21 +62,40 @@ const Todoitem = styled.div`
     font-size: 3rem;
     font-weight: 200;
     cursor: pointer;
+    transition: color 0.3s;
+    &:hover {
+      color: var(--accent-color);
+    }
   }
 `;
 
-const TodoItem = () => {
+const TodoItem = ({ item }) => {
+  const dispatch = useDispatch();
+
+  const todoChecked = () => {
+    dispatch(todoAction.todoCheck(!item.checked, item.id));
+  };
+
+  const todoDelete = () => {
+    dispatch(todoAction.todoDelete(item.id));
+  };
+
   return (
     <Todoitem>
-      <div className="checked">
-        <div className="checkbox">
-          <span class="checkIcon material-symbols-rounded">check</span>
+      <div className={item?.checked ? "checked" : ""}>
+        <div className="checkbox" onClick={todoChecked}>
+          <span className="checkIcon material-symbols-rounded">check</span>
         </div>
-        <h3>목업리스트</h3>
+        <h3>{item.todo}</h3>
       </div>
       <div>
-        <span className="todoDate">2025.04.15</span>
-        <span class="deleteIcon material-symbols-rounded">delete</span>
+        <span className="todoDate">{item.date}</span>
+        <span
+          className="deleteIcon material-symbols-rounded"
+          onClick={todoDelete}
+        >
+          delete
+        </span>
       </div>
     </Todoitem>
   );

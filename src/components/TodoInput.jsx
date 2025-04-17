@@ -1,5 +1,7 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { todoAction } from "../redux/todo/todoAction";
 
 const Form = styled.form`
   margin-bottom: 38px;
@@ -70,27 +72,46 @@ const SearchInput = styled.input`
 `;
 
 const TodoInput = () => {
+  const [content, setContent] = useState("");
+  const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
+
+  const todoSubmit = (e) => {
+    e.preventDefault();
+
+    if (content !== "") {
+      dispatch(todoAction.todocreate(content));
+      setContent("");
+    }
+  };
+
+  const searchSubmit = (e) => {
+    const value = e.target.value;
+    setSearch(value);
+
+    dispatch(todoAction.todoSearch(value));
+  };
+
   return (
     <>
-      <Form action="#" method="get">
+      <Form action="#" method="get" onSubmit={todoSubmit}>
         <input
           type="text"
           className="todoInput"
-          // ref={inputRef}
-          // value={content}
-          // onChange={onChangeContent}
-          // onKeyDown={onKeyDown}
           placeholder="새 TODO 작성하기"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
         />
         <button type="submit">
           <span className="material-symbols-rounded">add</span>
         </button>
       </Form>
+
       <SearchInput
         className="searchbar"
         type="text"
-        // value={search}
-        // onChange={onChangeSearch}
+        value={search}
+        onChange={searchSubmit}
         placeholder="검색어를 입력하세요"
       />
     </>
