@@ -13,6 +13,7 @@ const Form = styled.form`
     padding: 14px 24px;
     border: none;
     border-radius: 100px;
+    color: var(--dark-color);
     background: var(--bg-color);
     font-family: var(--freesentation);
     font-size: 1.6rem;
@@ -56,10 +57,12 @@ const SearchInput = styled.input`
   font-family: var(--freesentation);
   font-size: 1.6rem;
   font-weight: 300;
+  color: var(--dark-color);
+  background: none;
   &::placeholder {
     font-family: var(--freesentation);
     font-size: 1.6rem;
-    color: #ccc;
+    color: var(--border-color);
     opacity: 1;
     transition: opacity 0.3s;
   }

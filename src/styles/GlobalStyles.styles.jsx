@@ -63,12 +63,6 @@ const GlobalStyles = createGlobalStyle`
   html {
     font-size: 62.5%;
   }
-/* 
-  html.dark {
-  --bg-color: #121212;
-  --text-color: #eeeeee;
-  --accent-color: #00bcd4;
-} */
 
   body {
     font-size: 1.6rem;
@@ -96,9 +90,23 @@ const GlobalStyles = createGlobalStyle`
     --gray-color: #ccc;
     --sun-color: #FF9479;
     --moon-color: #FFE388;
+    --shadow-color: 0px 15px 50px 0px rgba(154, 166, 178, 0.15);
+    --shadow2-color: 0px 5px 10px 0px rgba(154, 166, 178, 0.15);
     --freesentation: 'Freesentation';
     --paperlogy: 'Paperlogy';
   }
+
+  html.dark {
+  --bg-color: #1e1f24;
+  --box-color: #2a2b30;
+  --text-color: #eeeeee; 
+  --accent-color: #4aa5f0;
+  --border-color: #444c56; 
+  --border2-color: #666c75;
+  --gray-color: #999999;   
+  --shadow-color: 0px 15px 40px 0px rgba(0, 0, 0, 0.5);
+  --shadow2-color: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+}
 `;
 
 export default GlobalStyles;

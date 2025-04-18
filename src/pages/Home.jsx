@@ -10,13 +10,18 @@ const Container = styled.div`
   width: 500px;
   margin: 0 auto;
   padding: 100px 0;
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    padding: 50px 50px;
+  }
 `;
 
 const Box = styled.div`
   padding: 45px;
   background: var(--box-color);
   border-radius: 10px;
-  box-shadow: 0px 15px 50px 0px rgba(154, 166, 178, 0.15);
+  box-shadow: var(--shadow-color);
 `;
 
 const Home = () => {

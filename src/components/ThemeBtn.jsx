@@ -1,4 +1,5 @@
-import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../redux/theme/themeAction";
 import styled from "styled-components";
 
 const ModeBtn = styled.div`
@@ -10,7 +11,7 @@ const ModeBtn = styled.div`
   border-radius: 50%;
   width: 58px;
   aspect-ratio: 1;
-  box-shadow: 0px 5px 10px 0px rgba(154, 166, 178, 0.15);
+  box-shadow: var(--shadow2-color);
   cursor: pointer;
   span {
     font-size: 3rem;
@@ -29,11 +30,33 @@ const ModeBtn = styled.div`
     opacity: 0;
     color: var(--moon-color);
   }
+
+  &.dark {
+    .light-mode {
+      visibility: hidden;
+      opacity: 0;
+      color: var(--sun-color);
+    }
+    .dark-mode {
+      visibility: visible;
+      opacity: 1;
+      color: var(--moon-color);
+    }
+  }
 `;
 
 const ThemeBtn = () => {
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme.mode);
+
+  const handleClickThema = () => {
+    dispatch(toggleTheme());
+  };
   return (
-    <ModeBtn>
+    <ModeBtn
+      onClick={handleClickThema}
+      className={theme === "light" ? "light" : "dark"}
+    >
       <span className="material-symbols-rounded light-mode">sunny</span>
       <span className="material-symbols-rounded dark-mode">dark_mode</span>
     </ModeBtn>
