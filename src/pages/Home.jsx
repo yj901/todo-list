@@ -16,7 +16,7 @@ const Container = styled.div`
     padding: 50px 50px;
   }
   @media screen and (max-width: 530px) {
-    padding: 30px 30px;
+    padding: 35px 25px;
   }
 `;
 
@@ -27,7 +27,7 @@ const Box = styled.div`
   box-shadow: var(--shadow-color);
 
   @media screen and (max-width: 530px) {
-    padding: 30px;
+    padding: 25px;
   }
 `;
 
