@@ -54,7 +54,7 @@ const Form = styled.form`
     .todoInput {
       flex: none;
       width: calc(100% - 49px);
-      padding: 11px 22px;
+      padding: 11px 18px;
       font-size: 1.5rem;
       &::placeholder {
         font-size: 1.5rem;

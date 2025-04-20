@@ -11,7 +11,7 @@ const Todoitem = styled.div`
     display: flex;
     align-items: center;
     &:nth-child(1) {
-      width: 71%;
+      width: 69%;
     }
     &:nth-child(2) {
       width: 29%;
@@ -57,7 +57,6 @@ const Todoitem = styled.div`
     font-size: 1.8rem;
     line-height: 1.2;
     font-weight: 400;
-    width: calc(100% - 50px);
     display: -webkit-box;
     -webkit-line-clamp: 2;
   }
@@ -101,6 +100,7 @@ const Todoitem = styled.div`
 
     h3 {
       font-size: 1.5rem;
+      margin-right: 10px;
     }
 
     .todoDate {
