@@ -43,6 +43,13 @@ const ModeBtn = styled.div`
       color: var(--moon-color);
     }
   }
+
+  @media screen and (max-width: 530px) {
+    width: 45px;
+    span {
+      font-size: 2.4rem;
+    }
+  }
 `;
 
 const ThemeBtn = () => {

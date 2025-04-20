@@ -14,6 +14,9 @@ const Txt = styled.h1`
   font-weight: 600;
   font-family: var(--paperlogy);
   letter-spacing: 0.03em;
+  @media screen and (max-width: 530px) {
+    font-size: 2.4rem;
+  }
 `;
 
 const TopTitle = () => {

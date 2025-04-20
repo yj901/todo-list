@@ -10,6 +10,13 @@ const Todoitem = styled.div`
   & > div {
     display: flex;
     align-items: center;
+    &:nth-child(1) {
+      width: 71%;
+    }
+    &:nth-child(2) {
+      width: 29%;
+      justify-content: end;
+    }
   }
 
   .checkbox {
@@ -48,13 +55,18 @@ const Todoitem = styled.div`
 
   h3 {
     font-size: 1.8rem;
+    line-height: 1.2;
     font-weight: 400;
+    width: calc(100% - 50px);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
   }
 
   .todoDate {
     font-size: 1.4rem;
-    margin-right: 5px;
     color: var(--border-color);
+    width: 75px;
+    white-space: nowrap;
   }
 
   .deleteIcon {
@@ -65,6 +77,39 @@ const Todoitem = styled.div`
     transition: color 0.3s;
     &:hover {
       color: var(--accent-color);
+    }
+  }
+
+  @media screen and (max-width: 530px) {
+    padding: 10px 0;
+    & > div {
+      &:nth-child(1) {
+        width: 67%;
+      }
+      &:nth-child(2) {
+        width: 30%;
+      }
+    }
+    .checkbox {
+      margin-right: 8px;
+      width: 16px;
+      height: 16px;
+      .checkIcon {
+        font-size: 2.3rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    .todoDate {
+      width: 63px;
+      font-size: 1.2rem;
+    }
+
+    .deleteIcon {
+      font-size: 2.5rem;
     }
   }
 `;

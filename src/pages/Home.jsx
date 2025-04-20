@@ -15,6 +15,9 @@ const Container = styled.div`
     width: 100%;
     padding: 50px 50px;
   }
+  @media screen and (max-width: 530px) {
+    padding: 30px 30px;
+  }
 `;
 
 const Box = styled.div`
@@ -22,6 +25,10 @@ const Box = styled.div`
   background: var(--box-color);
   border-radius: 10px;
   box-shadow: var(--shadow-color);
+
+  @media screen and (max-width: 530px) {
+    padding: 30px;
+  }
 `;
 
 const Home = () => {

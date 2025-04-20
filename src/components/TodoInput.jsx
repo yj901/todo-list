@@ -46,6 +46,28 @@ const Form = styled.form`
       color: var(--box-color);
     }
   }
+
+  @media screen and (max-width: 530px) {
+    margin-bottom: 25px;
+    justify-content: space-between;
+    gap: 00px;
+    .todoInput {
+      flex: none;
+      width: calc(100% - 49px);
+      padding: 11px 22px;
+      font-size: 1.5rem;
+      &::placeholder {
+        font-size: 1.5rem;
+      }
+    }
+    button[type="submit"] {
+      width: 39px;
+      height: 39px;
+      span {
+        font-size: 2.5rem;
+      }
+    }
+  }
 `;
 
 const SearchInput = styled.input`
@@ -70,6 +92,15 @@ const SearchInput = styled.input`
     outline: none;
     &::placeholder {
       opacity: 0;
+    }
+  }
+
+  @media screen and (max-width: 530px) {
+    margin-bottom: 10px;
+    padding: 11px 0px;
+    font-size: 1.5rem;
+    &::placeholder {
+      font-size: 1.5rem;
     }
   }
 `;

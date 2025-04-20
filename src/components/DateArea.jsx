@@ -12,6 +12,13 @@ const DatesArea = styled.div`
     font-weight: 600;
     font-size: 1.6rem;
   }
+
+  @media screen and (max-width: 530px) {
+    margin-bottom: 30px;
+    .day {
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 const Dates = styled.div`
@@ -33,7 +40,18 @@ const Dates = styled.div`
     font-size: 1.6rem;
     font-weight: 400;
   }
+
+  @media screen and (max-width: 530px) {
+    .date {
+      font-size: 4rem;
+    }
+    .m-y {
+      line-height: 1.4;
+      font-size: 1.4rem;
+    }
+  }
 `;
+
 const DateArea = () => {
   const today = new Date();
 

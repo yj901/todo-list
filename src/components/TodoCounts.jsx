@@ -14,6 +14,15 @@ const CountList = styled.ul`
     background: var(--bg-color);
     border-radius: 100px;
   }
+
+  @media screen and (max-width: 530px) {
+    margin-top: 50px;
+    gap: 4px;
+    li {
+      padding: 8px 14px;
+      font-size: 1.3rem;
+    }
+  }
 `;
 
 const TodoCounts = () => {
