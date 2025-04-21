@@ -33,6 +33,11 @@ const Form = styled.form`
     }
   }
   button[type="submit"] {
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
     width: 47px;
     aspect-ratio: 1;
     display: flex;

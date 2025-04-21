@@ -3,6 +3,11 @@ import { toggleTheme } from "../redux/theme/themeAction";
 import styled from "styled-components";
 
 const ModeBtn = styled.div`
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
   position: absolute;
   top: 50%;
   right: 0;

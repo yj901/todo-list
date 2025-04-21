@@ -20,6 +20,11 @@ const Todoitem = styled.div`
   }
 
   .checkbox {
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
     position: relative;
     margin-right: 10px;
     width: 18px;
@@ -69,6 +74,11 @@ const Todoitem = styled.div`
   }
 
   .deleteIcon {
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
     color: var(--border2-color);
     font-size: 3rem;
     font-weight: 200;
