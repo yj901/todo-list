@@ -64,6 +64,7 @@ const Todoitem = styled.div`
     font-weight: 400;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    width: calc(100% - 20px);
   }
 
   .todoDate {
@@ -110,7 +111,7 @@ const Todoitem = styled.div`
 
     h3 {
       font-size: 1.5rem;
-      margin-right: 10px;
+      padding-right: 10px;
     }
 
     .todoDate {
