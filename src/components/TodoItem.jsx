@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { todoAction } from "../redux/todo/todoAction";
+import { Check, Trash2 } from "lucide-react";
 
 const Todoitem = styled.div`
   padding: 14px 0;
@@ -33,7 +34,7 @@ const Todoitem = styled.div`
     border-radius: 50%;
     cursor: pointer;
     .checkIcon {
-      font-size: 2.5rem;
+      /* font-size: 2.5rem; */
       font-weight: 500;
       position: absolute;
       color: var(--accent-color);
@@ -81,7 +82,7 @@ const Todoitem = styled.div`
     -khtml-user-select: none;
     user-select: none;
     color: var(--border2-color);
-    font-size: 3rem;
+    /* font-size: 3rem; */
     font-weight: 200;
     cursor: pointer;
     transition: color 0.3s;
@@ -105,13 +106,14 @@ const Todoitem = styled.div`
       width: 16px;
       height: 16px;
       .checkIcon {
-        font-size: 2.3rem;
+        width: 18px;
+        height: 18px;
       }
     }
 
     h3 {
       font-size: 1.5rem;
-      padding-right: 10px;
+      padding-right: 8px;
     }
 
     .todoDate {
@@ -120,7 +122,9 @@ const Todoitem = styled.div`
     }
 
     .deleteIcon {
-      font-size: 2.5rem;
+      /* font-size: 2.5rem; */
+      width: 16px;
+      height: 16px;
     }
   }
 `;
@@ -140,18 +144,25 @@ const TodoItem = ({ item }) => {
     <Todoitem>
       <div className={item?.checked ? "checked" : ""}>
         <div className="checkbox" onClick={todoChecked}>
-          <span className="checkIcon material-symbols-rounded">check</span>
+          <Check className="checkIcon" size={20} strokeWidth={3} />
+          {/* <span className="checkIcon material-symbols-rounded">check</span> */}
         </div>
         <h3>{item.todo}</h3>
       </div>
       <div>
         <span className="todoDate">{item.date}</span>
-        <span
+        <Trash2
+          onClick={todoDelete}
+          className="deleteIcon"
+          strokeWidth={1.4}
+          size={23}
+        />
+        {/* <span
           className="deleteIcon material-symbols-rounded"
           onClick={todoDelete}
         >
           delete
-        </span>
+        </span> */}
       </div>
     </Todoitem>
   );

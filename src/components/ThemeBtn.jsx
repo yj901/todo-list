@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../redux/theme/themeAction";
 import styled from "styled-components";
+import { Sun, Moon } from "lucide-react";
 
 const ModeBtn = styled.div`
   -ms-user-select: none;
@@ -18,8 +19,7 @@ const ModeBtn = styled.div`
   aspect-ratio: 1;
   box-shadow: var(--shadow2-color);
   cursor: pointer;
-  span {
-    font-size: 3rem;
+  svg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -51,8 +51,13 @@ const ModeBtn = styled.div`
 
   @media screen and (max-width: 530px) {
     width: 45px;
-    span {
-      font-size: 2.4rem;
+    svg {
+      width: 22px;
+      height: 22px;
+      &.light-mode {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 `;
@@ -69,8 +74,8 @@ const ThemeBtn = () => {
       onClick={handleClickThema}
       className={theme === "light" ? "light" : "dark"}
     >
-      <span className="material-symbols-rounded light-mode">sunny</span>
-      <span className="material-symbols-rounded dark-mode">dark_mode</span>
+      <Sun className={"light-mode"} size={30} />
+      <Moon className={"dark-mode"} size={28} />
     </ModeBtn>
   );
 };

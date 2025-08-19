@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { todoAction } from "../redux/todo/todoAction";
+import { Plus } from "lucide-react";
 
 const Form = styled.form`
   margin-bottom: 38px;
@@ -46,8 +47,7 @@ const Form = styled.form`
     background: var(--accent-color);
     border-radius: 50%;
     cursor: pointer;
-    span {
-      font-size: 2.9rem;
+    svg {
       color: var(--box-color);
     }
   }
@@ -55,12 +55,13 @@ const Form = styled.form`
   @media screen and (max-width: 530px) {
     margin-bottom: 25px;
     justify-content: space-between;
-    gap: 00px;
+    gap: 0px;
     .todoInput {
       flex: none;
       width: calc(100% - 49px);
       padding: 11px 18px;
       font-size: 1.5rem;
+      font-weight: 400;
       &::placeholder {
         font-size: 1.5rem;
       }
@@ -68,8 +69,10 @@ const Form = styled.form`
     button[type="submit"] {
       width: 39px;
       height: 39px;
-      span {
-        font-size: 2.5rem;
+      svg {
+        width: 21px;
+        height: 21px;
+        stroke-width: 3;
       }
     }
   }
@@ -104,6 +107,7 @@ const SearchInput = styled.input`
     margin-bottom: 10px;
     padding: 11px 0px;
     font-size: 1.5rem;
+    font-weight: 400;
     &::placeholder {
       font-size: 1.5rem;
     }
@@ -142,7 +146,7 @@ const TodoInput = () => {
           onChange={(e) => setContent(e.target.value)}
         />
         <button type="submit">
-          <span className="material-symbols-rounded">add</span>
+          <Plus strokeWidth={2.5} size={25} />
         </button>
       </Form>
 
