@@ -3,8 +3,7 @@
 React + Redux로 만든 간단한 일정 관리 앱입니다.  
 할 일 추가/삭제, 완료 체크, 검색, 다크모드를 지원하며 LocalStorage로 상태를 보존합니다.
 
-🔗 [배포 사이트 바로가기](https://my-todolist-check.netlify.app/)  
-📂 [GitHub Repository](https://github.com/yj901/todo-list)
+🔗 [배포 사이트 바로가기](https://my-todolist-check.netlify.app/)
 
 ---
 
